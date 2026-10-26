@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>寒羽Hanyu的个人主页</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+
+		<header class="header" id="head_bar">
+			<a class="brand" href="#home">
+				<span class="brand_badge">😁</span>
+				<span class="brand_name">寒羽Hanyu的个人主页</span>
+			</a>
+
+			<nav class="nav-links" id="navLinks">
+				<a href="#home" class="nav-link active">首页</a>
+				<a href="#about" class="nav-link">自我介绍</a>
+				<a href="#skills" class="nav-link">学习进度</a>
+				<button class="nav-link" type="button" id="navMusic">我的歌单</button>
+
+				<div class="nav-item" id="siteMenu">
+					<button class="nav-link dropdown-toggle" type="button" aria-expanded="false">
+						常用网站<span class="caret"></span>
+					</button>
+
+					<div class="dropdown">
+						<a class="dropdown-link" href="https://10.2.34.176/student" target="_blank" rel="noopener">上外学生课堂平台</a>
+						<a class="dropdown-link" href="https://www.luogu.com.cn/" target="_blank" rel="noopener">洛谷</a>
+						<a class="dropdown-link" href="https://www.desmos.com/calculator?lang=zh-CN" target="_blank" rel="noopener">Desmos 图形计算器</a>
+						<a class="dropdown-link" href="https://dict.eudic.net/" target="_blank" rel="noopener">欧路词典</a>
+						<a class="dropdown-link" href="https://space.bilibili.com/523120453?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">我的 B 站主页</a>
+						<a class="dropdown-link" href="https://www.bilibili.com/video/BV17XMf6nE1v/?spm_id_from=333.337.search-card.all.click&amp;vd_source=5f9944e18ee7a56a7ea3e45ba377dc32" target="_blank" rel="noopener">神秘小视频</a>
+						<a class="dropdown-link dropdown-all" href="#sites">查看全部网站</a>
+
+						<!-- 预留：以后添加网站，复制下面这一行，改掉 href 和名字即可
+						<a class="dropdown-link" href="https://你的网址" target="_blank" rel="noopener">网站名字</a>
+						-->
+						<div class="dropdown-slot">预留位置 · 待添加</div>
+						<div class="dropdown-slot">预留位置 · 待添加</div>
+					</div>
+				</div>
+
+				<a href="#contact" class="nav-link">联系我</a>
+				<a href="diary.html" class="nav-link nav-link-out" target="_blank" rel="noopener">写日记<span class="nav-arrow">↗</span></a>
+
+				<!-- 预留：新的菜单项写在这里
+				<a href="#新板块" class="nav-link">新菜单</a>
+				-->
+			</nav>
+		</header>
+
+		<main class="content">
+
+			<section class="division hero" id="home">
+				<div class="hero_kicker">欢迎来到我的小站</div>
+				<h1 class="hero_name">寒羽<span>Hanyu</span></h1>
+				<p class="hero_desc">网页设计初学者，二次元爱好者。喜欢把脑袋里的小点子，一点点做成能点开、能碰一碰的页面。</p>
+				<div class="tags">
+					<span class="tag">网页设计</span>
+					<span class="tag">HTML / CSS</span>
+					<span class="tag">音乐与番剧</span>
+				</div>
+			</section>
+
+			<section class="division" id="about">
+				<div class="subtitle">自我介绍</div>
+				<div class="subcontent">hello啊，我是寒羽。这个主页是我边学边做出来的小作品，从最开始只会几行 HTML，到现在能写一点渐变、动效和响应式布局，每往前一步都挺有意思。</div>
+				<div class="subcontent">平时喜欢听歌、看番、打游戏，也很享受把喜欢的东西塞进网页里的过程</div>
+				<div class="info-grid">
+					<div class="info-item">
+						<div class="info-label">昵称</div>
+						<div class="info-value">寒羽 / Hanyu</div>
+					</div>
+					<div class="info-item">
+						<div class="info-label">身份</div>
+						<div class="info-value">学生 · 网页设计学习中</div>
+					</div>
+					<div class="info-item">
+						<div class="info-label">爱好</div>
+						<div class="info-value">二次元 · 音乐 · 游戏</div>
+					</div>
+					<div class="info-item">
+						<div class="info-label">正在做</div>
+						<div class="info-value">把自己的小站慢慢做完整</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="division" id="skills">
+				<div class="subtitle">学习进度</div>
+				<div class="subcontent">下面是我对自己的小评估，会随着学习不断更新。</div>
+				<div class="skill-list">
+					<div class="skill">
+						<div class="skill-head"><span>HTML 结构</span><span class="skill-num">75%</span></div>
+						<div class="skill-bar"><div class="skill-fill" style="--w: 75%"></div></div>
+					</div>
+					<div class="skill">
+						<div class="skill-head"><span>CSS 样式</span><span class="skill-num">50%</span></div>
+						<div class="skill-bar"><div class="skill-fill" style="--w: 50%"></div></div>
+					</div>
+					<div class="skill">
+						<div class="skill-head"><span>Python</span><span class="skill-num">65%</span></div>
+						<div class="skill-bar"><div class="skill-fill" style="--w: 65%"></div></div>
+					</div>
+					<div class="skill">
+						<div class="skill-head"><span>C++</span><span class="skill-num">20%</span></div>
+						<div class="skill-bar"><div class="skill-fill" style="--w: 20%"></div></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="division" id="sites">
+				<div class="subtitle">常用网站</div>
+				<div class="subcontent">这里收着常逛的地方，也留了几个空位，之后想到再慢慢填。</div>
+				<div class="site-grid">
+					<a class="site-card" href="https://10.2.34.176/student" target="_blank" rel="noopener">
+						<span class="site-icon">上</span>
+						<span class="site-name">上外学生课堂平台</span>
+						<span class="site-desc">课程、作业与课堂资料</span>
+					</a>
+					<a class="site-card" href="https://www.luogu.com.cn/" target="_blank" rel="noopener">
+						<span class="site-icon">洛</span>
+						<span class="site-name">洛谷</span>
+						<span class="site-desc">刷题与算法练习</span>
+					</a>
+					<a class="site-card" href="https://www.desmos.com/calculator?lang=zh-CN" target="_blank" rel="noopener">
+						<span class="site-icon">π</span>
+						<span class="site-name">Desmos 图形计算器</span>
+						<span class="site-desc">画函数图像、看曲线</span>
+					</a>
+					<a class="site-card" href="https://dict.eudic.net/" target="_blank" rel="noopener">
+						<span class="site-icon">E</span>
+						<span class="site-name">欧路词典</span>
+						<span class="site-desc">查单词、背单词</span>
+					</a>
+					<a class="site-card" href="https://space.bilibili.com/523120453?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">
+						<span class="site-icon">B</span>
+						<span class="site-name">我的 B 站主页</span>
+						<span class="site-desc">视频、动态和收藏都在这里</span>
+					</a>
+					<a class="site-card" href="https://www.bilibili.com/video/BV17XMf6nE1v/?spm_id_from=333.337.search-card.all.click&amp;vd_source=5f9944e18ee7a56a7ea3e45ba377dc32" target="_blank" rel="noopener">
+						<span class="site-icon">▶</span>
+						<span class="site-name">神秘小视频</span>
+						<span class="site-desc">点开看看就知道是什么了</span>
+					</a>
+
+					<!-- 预留：添加新网站时，复制下面这一整张卡片，改掉链接和文字
+					<a class="site-card" href="https://你的网址" target="_blank" rel="noopener">
+						<span class="site-icon">★</span>
+						<span class="site-name">网站名字</span>
+						<span class="site-desc">一句话介绍</span>
+					</a>
+					-->
+
+					<div class="site-card site-empty">
+						<span class="site-plus">+</span>
+						<span class="site-name">预留位置</span>
+						<span class="site-desc">之后添加常用网站</span>
+					</div>
+					<div class="site-card site-empty">
+						<span class="site-plus">+</span>
+						<span class="site-name">预留位置</span>
+						<span class="site-desc">之后添加常用网站</span>
+					</div>
+					<div class="site-card site-empty">
+						<span class="site-plus">+</span>
+						<span class="site-name">预留位置</span>
+						<span class="site-desc">之后添加常用网站</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="division" id="contact">
+				<div class="subtitle">联系我</div>
+				<div class="subcontent">想聊网页、聊动漫游戏，或者只是随便说说话，都欢迎来找我。</div>
+				<div class="contact-row">
+					<a class="contact-btn" href="https://space.bilibili.com/523120453?spm_id_from=333.1007.0.0" target="_blank" rel="noopener">B 站私信</a>
+					<a class="contact-btn ghost" href="#home">回到顶部</a>
+				</div>
+			</section>
+
+		</main>
+
+		<footer class="footer">
+			<span>© 2026 寒羽Hanyu</span>
+			<span class="footer-dot"></span>
+			<span>用 HTML + CSS 一点点搭起来</span>
+		</footer>
+
+		<!-- 侧边音乐播放器：平时只是右下角的小唱片，点一下才展开完整面板 -->
+		<div class="music-dock" id="musicDock">
+			<button class="dock-mini" id="dockMini" type="button" aria-label="打开播放器" aria-expanded="false" title="打开播放器">
+				<img class="dock-mini-cover" src="./Furina.png" alt="" />
+				<span class="dock-mini-hole"></span>
+				<span class="dock-mini-note">♪</span>
+			</button>
+
+			<aside class="dock-panel" id="dockPanel" aria-label="音乐播放器" aria-hidden="true">
+				<div class="dock-head">
+					<span class="dock-head-title">我的歌单</span>
+					<button class="dock-close" id="dockClose" type="button" aria-label="收起播放器">×</button>
+				</div>
+
+				<div class="player" id="player">
+					<div class="player-main">
+						<div class="disc" id="disc">
+							<img class="disc-cover" src="./Furina.png" alt="唱片封面" />
+							<span class="disc-hole"></span>
+						</div>
+						<div class="track-meta">
+							<div class="track-title" id="trackTitle">还没开始播放</div>
+							<div class="track-artist" id="trackArtist">挑一首放着吧</div>
+						</div>
+						<div class="player-controls">
+							<button class="ctrl-btn" id="prevBtn" type="button" aria-label="上一首">
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5v14L9.6 12z"/></svg>
+							</button>
+							<button class="ctrl-btn ctrl-play" id="playBtn" type="button" aria-label="播放">
+								<svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>
+								<svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+							</button>
+							<button class="ctrl-btn" id="nextBtn" type="button" aria-label="下一首">
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5v14l10.4-7z"/></svg>
+							</button>
+						</div>
+					</div>
+
+					<div class="progress-row">
+						<span class="time" id="curTime">0:00</span>
+						<div class="progress" id="progress" role="slider" aria-label="播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+							<div class="progress-fill" id="progressFill"><span class="progress-knob"></span></div>
+						</div>
+						<span class="time" id="durTime">0:00</span>
+					</div>
+
+					<div class="playlist" id="playlist"></div>
+				</div>
+
+				<audio id="audio" preload="metadata"></audio>
+			</aside>
+		</div>
+
+		<!-- 小宠物：点它会跳一下并说话，眼睛会跟着鼠标转 -->
+		<div class="pet" id="pet" title="点我摸摸头">
+			<div class="pet-bubble" id="petBubble">喵~</div>
+			<svg class="pet-svg" viewBox="0 0 160 160" aria-label="蓝白小猫">
+				<path class="pet-tail" d="M112 128 c24 2 32 -12 24 -26 c-5 -9 -15 -10 -20 -3" fill="none" stroke="#dbe7ff" stroke-width="13" stroke-linecap="round" />
+
+				<ellipse cx="80" cy="128" rx="36" ry="24" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" />
+				<ellipse cx="62" cy="145" rx="12" ry="6" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" />
+				<ellipse cx="98" cy="145" rx="12" ry="6" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" />
+
+				<path d="M48 52 L42 18 L74 40 Z" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" stroke-linejoin="round" />
+				<path d="M53 48 L49 29 L67 41 Z" fill="#ffd3e2" />
+				<path d="M112 52 L118 18 L86 40 Z" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" stroke-linejoin="round" />
+				<path d="M107 48 L111 29 L93 41 Z" fill="#ffd3e2" />
+
+				<circle cx="80" cy="80" r="40" fill="#fdfbff" stroke="#a9c2ff" stroke-width="3" />
+
+				<ellipse cx="52" cy="92" rx="6.5" ry="3.6" fill="#ffd6e4" opacity="0.9" />
+				<ellipse cx="108" cy="92" rx="6.5" ry="3.6" fill="#ffd6e4" opacity="0.9" />
+
+				<g class="pet-eye">
+					<ellipse cx="66" cy="80" rx="8" ry="9.2" fill="#ffffff" stroke="#cfe0ff" stroke-width="2" />
+					<g class="pet-pupil">
+						<circle cx="66" cy="81" r="4.8" fill="#2b3a63" />
+						<circle cx="67.8" cy="79" r="1.6" fill="#ffffff" />
+					</g>
+				</g>
+				<g class="pet-eye">
+					<ellipse cx="94" cy="80" rx="8" ry="9.2" fill="#ffffff" stroke="#cfe0ff" stroke-width="2" />
+					<g class="pet-pupil">
+						<circle cx="94" cy="81" r="4.8" fill="#2b3a63" />
+						<circle cx="95.8" cy="79" r="1.6" fill="#ffffff" />
+					</g>
+				</g>
+
+				<path d="M76.5 92 h7 l-3.5 4.2 z" fill="#ffb3c7" />
+				<path d="M80 96.2 q-4.2 5.2 -8.4 1.2 M80 96.2 q4.2 5.2 8.4 1.2" fill="none" stroke="#c3d1ea" stroke-width="1.8" stroke-linecap="round" />
+
+				<path d="M38 84 l-14 -4 M38 91 l-14 4 M122 84 l14 -4 M122 91 l14 4" fill="none" stroke="#c3d1ea" stroke-width="1.8" stroke-linecap="round" />
+
+				<path d="M63 110 q17 9 34 0" fill="none" stroke="#6b9bff" stroke-width="4.5" stroke-linecap="round" />
+				<circle cx="80" cy="115.5" r="4" fill="#6b9bff" />
+			</svg>
+		</div>
+
+		<script>
+			// 下拉菜单：桌面端靠 CSS 悬停，这里补上点击 / 触屏的展开与收起
+			var siteMenu = document.getElementById('siteMenu');
+			var siteToggle = siteMenu.querySelector('.dropdown-toggle');
+
+			siteToggle.addEventListener('click', function (e) {
+				e.stopPropagation();
+				var open = siteMenu.classList.toggle('open');
+				siteToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+			});
+
+			document.addEventListener('click', function () {
+				siteMenu.classList.remove('open');
+				siteToggle.setAttribute('aria-expanded', 'false');
+			});
+
+			// 滚动到哪个板块，菜单就高亮哪一项
+			var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link[href^="#"]'));
+			var sections = links.map(function (link) {
+				return document.querySelector(link.getAttribute('href'));
+			}).filter(Boolean);
+
+			function setActive(id) {
+				links.forEach(function (link) {
+					link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+				});
+			}
+
+			function onScroll() {
+				var line = window.scrollY + 100;
+				var current = sections[0];
+				sections.forEach(function (section) {
+					if (section.offsetTop <= line) current = section;
+				});
+				if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+					current = sections[sections.length - 1];
+				}
+				if (current) setActive(current.id);
+			}
+
+			window.addEventListener('scroll', onScroll, { passive: true });
+			window.addEventListener('resize', onScroll);
+			onScroll();
+
+			// ===== 音乐播放器 =====
+			var songs = [
+				{ file: 'music/qilixiang.mp3', title: '七里香', artist: '周杰伦' },
+				{ file: 'music/yequ.mp3', title: '夜曲', artist: '周杰伦' },
+				{ file: 'music/gaobaiqiqiu.mp3', title: '告白气球', artist: '周杰伦' },
+				{ file: 'music/feng.mp3', title: '枫', artist: '周杰伦' },
+				{ file: 'music/xiulian-aiqing.mp3', title: '修炼爱情', artist: '林俊杰' },
+				{ file: 'music/shinian.mp3', title: '十年', artist: '陈奕迅' },
+				{ file: 'music/fushishanxia.mp3', title: '富士山下', artist: '陈奕迅' },
+				{ file: 'music/hongse-gaogenxie.mp3', title: '红色高跟鞋', artist: '蔡健雅' }
+			];
+
+			var audio = document.getElementById('audio');
+			var player = document.getElementById('player');
+			var dock = document.getElementById('musicDock');
+			var playlist = document.getElementById('playlist');
+			var playBtn = document.getElementById('playBtn');
+			var prevBtn = document.getElementById('prevBtn');
+			var nextBtn = document.getElementById('nextBtn');
+			var progress = document.getElementById('progress');
+			var progressFill = document.getElementById('progressFill');
+			var curTime = document.getElementById('curTime');
+			var durTime = document.getElementById('durTime');
+			var trackTitle = document.getElementById('trackTitle');
+			var trackArtist = document.getElementById('trackArtist');
+			var current = -1;
+			var dragging = false;
+
+			function fmt(seconds) {
+				if (!isFinite(seconds)) return '0:00';
+				var m = Math.floor(seconds / 60);
+				var s = Math.floor(seconds % 60);
+				return m + ':' + (s < 10 ? '0' + s : s);
+			}
+
+			songs.forEach(function (song, i) {
+				var item = document.createElement('button');
+				item.type = 'button';
+				item.className = 'playlist-item';
+				item.innerHTML = '<span class="playlist-index">' + (i < 9 ? '0' : '') + (i + 1) + '</span>' +
+					'<span class="playlist-name">' + song.title + '</span>' +
+					'<span class="playlist-artist">' + song.artist + '</span>';
+				item.addEventListener('click', function () { load(i, true); });
+				playlist.appendChild(item);
+			});
+
+			function load(i, autoplay) {
+				current = i;
+				audio.src = songs[i].file;
+				trackTitle.textContent = songs[i].title;
+				trackArtist.textContent = songs[i].artist;
+				progressFill.style.width = '0%';
+				curTime.textContent = '0:00';
+				durTime.textContent = '0:00';
+				Array.prototype.forEach.call(playlist.children, function (el, idx) {
+					el.classList.toggle('active', idx === i);
+				});
+				if (autoplay) {
+					var p = audio.play();
+					if (p && p.catch) p.catch(function () {});
+				}
+			}
+
+			playBtn.addEventListener('click', function () {
+				if (current < 0) { load(0, true); return; }
+				if (audio.paused) {
+					var p = audio.play();
+					if (p && p.catch) p.catch(function () {});
+				} else {
+					audio.pause();
+				}
+			});
+
+			prevBtn.addEventListener('click', function () {
+				if (current < 0) { load(0, true); return; }
+				load((current - 1 + songs.length) % songs.length, true);
+			});
+
+			nextBtn.addEventListener('click', function () {
+				if (current < 0) { load(0, true); return; }
+				load((current + 1) % songs.length, true);
+			});
+
+			audio.addEventListener('play', function () {
+				player.classList.add('playing');
+				dock.classList.add('playing');
+				playBtn.setAttribute('aria-label', '暂停');
+			});
+
+			audio.addEventListener('pause', function () {
+				player.classList.remove('playing');
+				dock.classList.remove('playing');
+				playBtn.setAttribute('aria-label', '播放');
+			});
+
+			audio.addEventListener('ended', function () {
+				load((current + 1) % songs.length, true);
+			});
+
+			audio.addEventListener('loadedmetadata', function () {
+				durTime.textContent = fmt(audio.duration);
+			});
+
+			audio.addEventListener('timeupdate', function () {
+				if (!audio.duration) return;
+				var percent = audio.currentTime / audio.duration * 100;
+				progressFill.style.width = percent + '%';
+				progress.setAttribute('aria-valuenow', Math.round(percent));
+				curTime.textContent = fmt(audio.currentTime);
+			});
+
+			function seek(e) {
+				if (!audio.duration) return;
+				var rect = progress.getBoundingClientRect();
+				var ratio = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+				audio.currentTime = ratio * audio.duration;
+				progressFill.style.width = ratio * 100 + '%';
+				curTime.textContent = fmt(audio.currentTime);
+			}
+
+			progress.addEventListener('pointerdown', function (e) {
+				dragging = true;
+				progress.setPointerCapture(e.pointerId);
+				seek(e);
+			});
+
+			progress.addEventListener('pointermove', function (e) {
+				if (dragging) seek(e);
+			});
+
+			progress.addEventListener('pointerup', function () { dragging = false; });
+			progress.addEventListener('pointercancel', function () { dragging = false; });
+
+			progress.addEventListener('keydown', function (e) {
+				if (!audio.duration) return;
+				if (e.key === 'ArrowRight') audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+				if (e.key === 'ArrowLeft') audio.currentTime = Math.max(0, audio.currentTime - 5);
+			});
+
+			// ===== 小宠物 =====
+			var pet = document.getElementById('pet');
+			var bubble = document.getElementById('petBubble');
+			var pupils = pet.querySelectorAll('.pet-pupil');
+			var lines = ['喵~', '今天也辛苦啦', '要不要听首歌？', '别熬夜太晚哦', '摸摸头就开心！', '去写两句日记吧，我陪着你'];
+			var bubbleTimer = null;
+			var pats = Number(localStorage.getItem('hanyu_pet_pats') || 0);
+
+			function say(text) {
+				bubble.textContent = text;
+				bubble.classList.add('show');
+				clearTimeout(bubbleTimer);
+				bubbleTimer = setTimeout(function () { bubble.classList.remove('show'); }, 2400);
+			}
+
+			function spawnHeart(x, y) {
+				var heart = document.createElement('span');
+				heart.className = 'pet-heart';
+				heart.textContent = '♥';
+				heart.style.left = (x - 8) + 'px';
+				heart.style.top = (y - 18) + 'px';
+				document.body.appendChild(heart);
+				setTimeout(function () { heart.remove(); }, 1200);
+			}
+
+			// 可以按住拖动小猫，换个别挡住内容的位置
+			var petDrag = { active: false, moved: false, startX: 0, startY: 0, left: 0, top: 0 };
+
+			pet.addEventListener('pointerdown', function (e) {
+				var rect = pet.getBoundingClientRect();
+				petDrag.active = true;
+				petDrag.moved = false;
+				petDrag.startX = e.clientX;
+				petDrag.startY = e.clientY;
+				petDrag.left = rect.left;
+				petDrag.top = rect.top;
+				pet.classList.add('dragging');
+				pet.setPointerCapture(e.pointerId);
+			});
+
+			pet.addEventListener('pointermove', function (e) {
+				if (!petDrag.active) return;
+				var dx = e.clientX - petDrag.startX;
+				var dy = e.clientY - petDrag.startY;
+				if (Math.abs(dx) + Math.abs(dy) > 6) petDrag.moved = true;
+				if (!petDrag.moved) return;
+				pet.style.left = Math.max(4, Math.min(window.innerWidth - pet.offsetWidth - 4, petDrag.left + dx)) + 'px';
+				pet.style.top = Math.max(4, Math.min(window.innerHeight - pet.offsetHeight - 4, petDrag.top + dy)) + 'px';
+				pet.style.right = 'auto';
+				pet.style.bottom = 'auto';
+			});
+
+			function endDrag() {
+				petDrag.active = false;
+				pet.classList.remove('dragging');
+			}
+
+			pet.addEventListener('pointerup', endDrag);
+			pet.addEventListener('pointercancel', endDrag);
+
+			pet.addEventListener('click', function (e) {
+				if (petDrag.moved) {
+					petDrag.moved = false;
+					return;
+				}
+				pet.classList.remove('jump');
+				void pet.offsetWidth;
+				pet.classList.add('jump');
+				pats++;
+				localStorage.setItem('hanyu_pet_pats', pats);
+				say(pats % 10 === 0 ? '已经被摸 ' + pats + ' 次啦，好幸福～' : lines[Math.floor(Math.random() * lines.length)]);
+				spawnHeart(e.clientX, e.clientY);
+			});
+
+			pet.addEventListener('animationend', function (e) {
+				if (e.animationName === 'petJump') pet.classList.remove('jump');
+			});
+
+			// 眼睛跟着鼠标转
+			var eyePending = false;
+			document.addEventListener('mousemove', function (e) {
+				if (eyePending) return;
+				eyePending = true;
+				requestAnimationFrame(function () {
+					eyePending = false;
+					var rect = pet.getBoundingClientRect();
+					var dx = e.clientX - (rect.left + rect.width / 2);
+					var dy = e.clientY - (rect.top + rect.height * 0.5);
+					var angle = Math.atan2(dy, dx);
+					var offset = Math.min(1, Math.sqrt(dx * dx + dy * dy) / 240) * 3.2;
+					var ox = (Math.cos(angle) * offset).toFixed(1);
+					var oy = (Math.sin(angle) * offset).toFixed(1);
+					Array.prototype.forEach.call(pupils, function (pupil) {
+						pupil.setAttribute('transform', 'translate(' + ox + ' ' + oy + ')');
+					});
+				});
+			});
+
+			// ===== 侧边播放器的展开 / 收起 =====
+			var dockMini = document.getElementById('dockMini');
+			var dockPanel = document.getElementById('dockPanel');
+			var dockClose = document.getElementById('dockClose');
+			var navMusic = document.getElementById('navMusic');
+
+			function setDock(open) {
+				dock.classList.toggle('open', open);
+				dockMini.setAttribute('aria-expanded', open ? 'true' : 'false');
+				dockPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
+			}
+
+			dockMini.addEventListener('click', function () { setDock(true); });
+			navMusic.addEventListener('click', function () { setDock(true); });
+			dockClose.addEventListener('click', function () { setDock(false); });
+
+			// 点唱片、面板和导航按钮以外的地方，自动收起
+			document.addEventListener('click', function (e) {
+				if (!dock.classList.contains('open')) return;
+				if (dockPanel.contains(e.target) || dockMini.contains(e.target) || navMusic.contains(e.target) || pet.contains(e.target)) return;
+				setDock(false);
+			});
+
+			document.addEventListener('keydown', function (e) {
+				if (e.key === 'Escape') setDock(false);
+			});
+		</script>
+
+	</body>
+</html>

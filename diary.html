@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>我的小日记 · 寒羽Hanyu</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+
+		<header class="header" id="head_bar">
+			<a class="brand" href="index.html">
+				<span class="brand_badge">📖</span>
+				<span class="brand_name">我的小日记</span>
+			</a>
+
+			<nav class="nav-links">
+				<a href="index.html" class="nav-link">首页</a>
+			</nav>
+		</header>
+
+		<main class="diary-wrap">
+
+			<section class="division">
+				<div class="subtitle">写一篇</div>
+				<div class="subcontent">今天发生了什么？随手记两句也好，只有你自己能看到。</div>
+
+				<form class="diary-form" id="diaryForm">
+					<div>
+						<div class="field-label">今天的心情</div>
+						<div class="moods" id="moods">
+							<button class="mood" type="button" data-mood="开心">开心</button>
+							<button class="mood active" type="button" data-mood="平静">平静</button>
+							<button class="mood" type="button" data-mood="充实">充实</button>
+							<button class="mood" type="button" data-mood="有点累">有点累</button>
+							<button class="mood" type="button" data-mood="期待">期待</button>
+							<input class="mood-input" id="customMood" type="text" maxlength="12" placeholder="自定义心情…" aria-label="自定义心情" />
+						</div>
+					</div>
+
+					<div>
+						<div class="field-label">标题（可以不写）</div>
+						<input class="text-input" id="entryTitle" type="text" maxlength="40" placeholder="比如：今天的风很好">
+					</div>
+
+					<div>
+						<div class="field-label">正文</div>
+						<textarea class="text-area" id="entryBody" placeholder="写下今天的小事、心得，或者一句想对自己说的话……"></textarea>
+					</div>
+
+					<div class="form-foot">
+						<span class="counter" id="counter">0 字</span>
+						<div class="form-actions">
+							<button class="ghost-btn" type="button" id="clearBtn">清空</button>
+							<button class="contact-btn" type="submit" id="saveBtn">保存这篇</button>
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<section class="division">
+				<div class="subtitle">我的日记<span class="diary-count" id="entryCount"></span></div>
+				<div class="entries" id="entries"></div>
+				<div class="form-actions" id="dangerZone" style="margin-top:16px; display:none;">
+					<button class="ghost-btn" type="button" id="clearAllBtn">清空全部日记</button>
+				</div>
+			</section>
+
+		</main>
+
+		<footer class="footer">
+			<span>© 2026 寒羽Hanyu</span>
+			<span class="footer-dot"></span>
+			<span>日记保存在这台电脑的浏览器里</span>
+		</footer>
+
+		<script>
+			var STORAGE_KEY = 'hanyu_diary_v1';
+			var form = document.getElementById('diaryForm');
+			var titleInput = document.getElementById('entryTitle');
+			var bodyInput = document.getElementById('entryBody');
+			var counter = document.getElementById('counter');
+			var entriesEl = document.getElementById('entries');
+			var entryCount = document.getElementById('entryCount');
+			var clearAllBtn = document.getElementById('clearAllBtn');
+			var dangerZone = document.getElementById('dangerZone');
+			var saveBtn = document.getElementById('saveBtn');
+			var moodsEl = document.getElementById('moods');
+			var customMood = document.getElementById('customMood');
+			var mood = '平静';
+			var presetMood = '平静';
+
+			function selectPreset(name) {
+				Array.prototype.forEach.call(moodsEl.querySelectorAll('.mood'), function (el) {
+					el.classList.toggle('active', el.dataset.mood === name);
+				});
+			}
+
+			function readEntries() {
+				try {
+					var list = JSON.parse(localStorage.getItem(STORAGE_KEY));
+					return Array.isArray(list) ? list : [];
+				} catch (e) {
+					return [];
+				}
+			}
+
+			function writeEntries(list) {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+			}
+
+			function stamp(date) {
+				function pad(n) { return n < 10 ? '0' + n : '' + n; }
+				return date.getFullYear() + '.' + pad(date.getMonth() + 1) + '.' + pad(date.getDate()) +
+					' ' + pad(date.getHours()) + ':' + pad(date.getMinutes());
+			}
+
+			function render() {
+				var list = readEntries();
+				entriesEl.innerHTML = '';
+				entryCount.textContent = list.length ? '共 ' + list.length + ' 篇' : '';
+				dangerZone.style.display = list.length ? 'flex' : 'none';
+
+				if (!list.length) {
+					var empty = document.createElement('div');
+					empty.className = 'empty-state';
+					empty.textContent = '还没有日记，写下第一篇吧。';
+					entriesEl.appendChild(empty);
+					return;
+				}
+
+				list.forEach(function (entry) {
+					var card = document.createElement('article');
+					card.className = 'entry';
+
+					var head = document.createElement('div');
+					head.className = 'entry-head';
+
+					var date = document.createElement('span');
+					date.className = 'entry-date';
+					date.textContent = entry.date;
+
+					var badge = document.createElement('span');
+					badge.className = 'entry-mood';
+					badge.textContent = entry.mood;
+
+					var title = document.createElement('span');
+					title.className = 'entry-title';
+					title.textContent = entry.title;
+
+					var del = document.createElement('button');
+					del.type = 'button';
+					del.className = 'entry-del';
+					del.textContent = '删除';
+					del.addEventListener('click', function () {
+						if (!confirm('删除这篇日记？删除后无法找回。')) return;
+						writeEntries(readEntries().filter(function (item) { return item.id !== entry.id; }));
+						render();
+					});
+
+					head.appendChild(date);
+					head.appendChild(badge);
+					head.appendChild(title);
+					head.appendChild(del);
+
+					var body = document.createElement('div');
+					body.className = 'entry-body';
+					body.textContent = entry.body;
+
+					card.appendChild(head);
+					card.appendChild(body);
+					entriesEl.appendChild(card);
+				});
+			}
+
+			moodsEl.addEventListener('click', function (e) {
+				var btn = e.target.closest('.mood');
+				if (!btn) return;
+				presetMood = btn.dataset.mood;
+				mood = presetMood;
+				selectPreset(presetMood);
+				customMood.value = '';
+				customMood.classList.remove('active');
+			});
+
+			// 自己写心情：填了就用自己写的，清空后回到上面选中的那个
+			customMood.addEventListener('input', function () {
+				var text = customMood.value.trim();
+				if (text) {
+					Array.prototype.forEach.call(moodsEl.querySelectorAll('.mood'), function (el) {
+						el.classList.remove('active');
+					});
+					customMood.classList.add('active');
+					mood = text;
+				} else {
+					customMood.classList.remove('active');
+					selectPreset(presetMood);
+					mood = presetMood;
+				}
+			});
+
+			bodyInput.addEventListener('input', function () {
+				counter.textContent = bodyInput.value.length + ' 字';
+			});
+
+			form.addEventListener('submit', function (e) {
+				e.preventDefault();
+				var body = bodyInput.value.trim();
+				if (!body) {
+					bodyInput.focus();
+					saveBtn.textContent = '先写点什么吧';
+					setTimeout(function () { saveBtn.textContent = '保存这篇'; }, 1600);
+					return;
+				}
+
+				var list = readEntries();
+				list.unshift({
+					id: String(Date.now()) + Math.random().toString(16).slice(2, 6),
+					date: stamp(new Date()),
+					mood: mood,
+					title: titleInput.value.trim() || '无题',
+					body: body
+				});
+				writeEntries(list);
+
+				titleInput.value = '';
+				bodyInput.value = '';
+				counter.textContent = '0 字';
+				render();
+
+				saveBtn.textContent = '已保存 ✓';
+				setTimeout(function () { saveBtn.textContent = '保存这篇'; }, 1600);
+			});
+
+			form.addEventListener('keydown', function (e) {
+				if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+					e.preventDefault();
+					form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event('submit', { cancelable: true }));
+				}
+			});
+
+			document.getElementById('clearBtn').addEventListener('click', function () {
+				titleInput.value = '';
+				bodyInput.value = '';
+				counter.textContent = '0 字';
+				bodyInput.focus();
+			});
+
+			clearAllBtn.addEventListener('click', function () {
+				if (!confirm('确定清空全部日记？这个操作无法撤销。')) return;
+				localStorage.removeItem(STORAGE_KEY);
+				render();
+			});
+
+			render();
+		</script>
+
+	</body>
+</html>
